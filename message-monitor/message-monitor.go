@@ -7,7 +7,7 @@ import (
 	"github.com/purstal/go-tieba-base/logs"
 	"github.com/purstal/go-tieba-base/tieba"
 
-	"github.com/purstal/pbtools/modules/utils/action"
+	"github.com/purstal/go-tieba-modules/utils/action"
 
 	//"github.com/purstal/go-tieba-base/tieba/floor-andr-6.1.3"
 	//"github.com/purstal/go-tieba-base/tieba/thread-win8-1.5.0.0"

@@ -8,7 +8,7 @@ import (
 	"github.com/purstal/go-tieba-base/tieba/adv-search"
 	"github.com/purstal/go-tieba-base/tieba/apis"
 	"github.com/purstal/go-tieba-base/tieba/apis/forum-win8-1.5.0.0"
-	monitor "github.com/purstal/pbtools/modules/forum-page-monitor"
+	monitor "github.com/purstal/go-tieba-modules/forum-page-monitor"
 )
 
 type Control int
