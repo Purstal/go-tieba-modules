@@ -79,14 +79,14 @@ func (m *SearchTaskManager) AddDemand(thread forum.ForumPageThread) {
 func (m *SearchTaskManager) ReportFoundPid(uid, pid uint64, serverTime time.Time) {
 	m.foundPidsLock.Lock()
 	if task, found := m.TaskMap[uid]; found {
-		task.FoundPids = AppendUint64SliceKeepOrder(task.FoundPids, pid)
+		task.FoundPids = AppendUint64SliceOrderly(task.FoundPids, pid)
 	} else {
 		if serverTime.Unix()/60 > m.LastReportTime.Unix()/60 {
 			m.LastMinFoundPidsPool = m.CurrentFoundPidsPool
 			m.LastReportTime = serverTime
 			m.CurrentFoundPidsPool = make(map[uint64][]uint64)
 		}
-		m.CurrentFoundPidsPool[uid] = AppendUint64SliceKeepOrder(m.CurrentFoundPidsPool[uid], pid)
+		m.CurrentFoundPidsPool[uid] = AppendUint64SliceOrderly(m.CurrentFoundPidsPool[uid], pid)
 	}
 	m.foundPidsLock.Unlock()
 }
